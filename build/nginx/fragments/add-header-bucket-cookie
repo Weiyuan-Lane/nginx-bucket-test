@@ -1,0 +1,1 @@
+add_header Set-Cookie "_abtest_key=$abtest_val; Path=/; Max-Age=2592000";

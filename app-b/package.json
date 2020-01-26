@@ -1,0 +1,12 @@
+{
+  "name": "app-b",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "~3.0.1",
+    "express": "~4.17.1"
+  }
+}
