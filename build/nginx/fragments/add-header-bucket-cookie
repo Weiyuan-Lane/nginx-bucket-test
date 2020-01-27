@@ -1,1 +1,1 @@
-add_header Set-Cookie "_abtest_key=$abtest_bucket_val; Path=/; Max-Age=2592000";
+add_header Set-Cookie "_segment_bucket_key=$segment_bucket_val; Path=/; Max-Age=2592000";
