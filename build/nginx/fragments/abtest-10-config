@@ -1,11 +1,11 @@
 include fragments/static/split-clients-10-buckets;
 
-map $cookie__abtest_key $_ck_abtest_val {
+map $cookie__abtest_key $_ck_abtest_bucket_val {
   '0' '0';'1' '1';'2' '2';'3' '3';'4' '4';'5' '5';'6' '6';'7' '7';'8' '8';'9' '9';
   default $_abtest_random_val;
 }
 
-map $arg__abtest_key $abtest_val {
+map $arg__abtest_key $abtest_bucket_val {
   '0' '0';'1' '1';'2' '2';'3' '3';'4' '4';'5' '5';'6' '6';'7' '7';'8' '8';'9' '9';
-  default $_ck_abtest_val;
+  default $_ck_abtest_bucket_val;
 }
