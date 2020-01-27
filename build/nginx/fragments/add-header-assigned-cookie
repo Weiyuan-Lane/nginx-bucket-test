@@ -1,0 +1,1 @@
+add_header Set-Cookie "_segment_assigned_key=$segment_assigned_val; Path=/; Max-Age=2592000";
