@@ -2,11 +2,36 @@
   <head>
     <title>App A Cohort</title>
     <link rel="stylesheet" href="//css/app.css">
+    <style>
+      body {margin:0;}
+      .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #52BE80;
+      }
+      .text-heading {
+        font-size: calc(1.5vw + 1.5vh);
+        color: #fff;
+      }
+      .text-body {
+        font-size: calc(1vw + 1vh);
+        color: #fff;
+      }
+      .off-color {
+        color: #000;
+      }
+    </style>
   </head>
   <body>
     <div class="main">
-      Bazinga! You came with the <b><%= configuration %></b> configuration!
-      This is cohort A
+      <div>
+        <p class="text-heading">Bazinga! You came with the <b class="off-color"><%= configuration %></b> configuration!</p>
+        <p class="text-body">This is cohort <b class="off-color">A</b></p>
+      </div>
     </div>
   </body>
 </html>
