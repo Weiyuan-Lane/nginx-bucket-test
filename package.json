@@ -1,0 +1,17 @@
+{
+  "name": "nginx-bucket-test",
+  "version": "1.0.0",
+  "description": "Demo for abtest and staged rollout using nginx",
+  "scripts": {
+    "init": "./init-project",
+    "dev:start": "docker build -t nginx-bucket-test:dev . && docker run --name nginx-bucket-test -d -p 80:80 nginx-bucket-test:dev",
+    "dev:stop": "docker rm -f nginx-bucket-test",
+    "deploy": "./submit-ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weiyuan-Lane/nginx-bucket-test.git"
+  },
+  "author": "Weiyuan Liu",
+  "homepage": "https://github.com/Weiyuan-Lane/nginx-bucket-test#readme"
+}

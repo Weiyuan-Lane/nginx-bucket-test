@@ -1,0 +1,30 @@
+#!/bin/sh
+
+project=$1
+billingId=$2
+cloudRunRegion=$3
+
+if [ -z "${cloudRunRegion}" ]; then 
+    cloudRunRegion='us-central1'
+fi
+
+# Create Project
+gcloud projects create $project
+
+# Enable required APIs
+gcloud services enable run.googleapis.com cloudbuild.googleapis.com iam.googleapis.com sheets.googleapis.com \
+  --project $project
+
+# Attach IAM roles to Cloud Build service account
+ROLES=(run.admin serverless.serviceAgent)
+for role in "${ROLES[@]}"; do
+  gcloud projects add-iam-policy-binding $project \
+    --member=serviceAccount:"$projectId@cloudbuild.gserviceaccount.com" \
+    --role roles/$role \
+    --project=$project
+done
+
+# Set config for Cloud Run
+gcloud config set run/platform managed --project $project
+gcloud config set run/region $cloudRunRegion --project $project
+
