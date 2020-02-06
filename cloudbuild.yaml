@@ -6,5 +6,5 @@ steps:
   args: 
     - -c
     - |
-      gcloud builds submit --tag gcr.io/$PROJECT_ID/abtest-staged-demo:1 -q
-      gcloud beta run deploy --image gcr.io/$PROJECT_ID/abtest-staged-demo:1 -q --allow-unauthenticated --platform="managed" --region="us-central1" abtest-staged-demo
+      gcloud builds submit --tag gcr.io/$PROJECT_ID/abtest-staged-demo:2 -q
+      gcloud beta run deploy --image gcr.io/$PROJECT_ID/abtest-staged-demo:2 -q --allow-unauthenticated --platform="managed" --region="us-central1" abtest-staged-demo

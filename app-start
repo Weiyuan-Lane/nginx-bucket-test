@@ -1,9 +1,4 @@
 #!/bin/sh
 
-# Install all node dependencies
-cd /opt/app-a/ && npm i -s
-cd /opt/app-b/ && npm i -s
-cd /opt/app-c/ && npm i -s
-
 # Start supervisor
 /usr/bin/supervisord -n

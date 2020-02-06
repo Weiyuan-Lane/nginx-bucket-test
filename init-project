@@ -10,9 +10,13 @@ fi
 
 # Create Project
 gcloud projects create $project
+projectId=`gcloud projects list --format="get(projectNumber)" --limit=1 --filter="projectId=$project"`
+
+# Attach billing account
+gcloud beta billing projects link $project --billing-account=$billingId >> /dev/null 2>&1
 
 # Enable required APIs
-gcloud services enable run.googleapis.com cloudbuild.googleapis.com iam.googleapis.com sheets.googleapis.com \
+gcloud services enable run.googleapis.com cloudbuild.googleapis.com iam.googleapis.com \
   --project $project
 
 # Attach IAM roles to Cloud Build service account
